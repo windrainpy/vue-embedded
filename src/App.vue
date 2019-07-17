@@ -1,12 +1,10 @@
 <template>
-  <el-container class="container">
-    <el-header class="m-header-wrap">
+  <div class="m-app">
+    <div class="m-container-header">
       <m-header />
-    </el-header>
-    <el-main class="m-main">
-      <router-view></router-view>
-    </el-main>
-  </el-container>
+    </div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -20,15 +18,11 @@ export default {
 }
 </script>
 
-<style lang="sass" scope>
-.container
-  background: #eff3f5
-  
-  .m-header-wrap
-    background: #fff
-    padding: 0
-    height: 90px!important
-  
-  .m-main
-    padding: 0
+<style lang="sass" scoped>
+.m-app
+  background: url('./assets/images/bg-body.jpg') no-repeat center 80px
+  min-height: 1080px
+  .m-container-header
+    background: url('./assets/images/bg-header.jpg') no-repeat center top
+    height: 80px
 </style>

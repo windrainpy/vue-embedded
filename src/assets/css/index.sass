@@ -6,34 +6,38 @@ li, dd
   list-style: none
 body, html
   font-size: 12px
+  background: #057d95
 h4
   font-size: 16px
 a
   color: #2ea1ad
   text-decoration: none
 
-.breadcrumb
-  display: flex
-  font-size: 14px
-  line-height: 30px
-  padding: 20px
+.m-container-breadcrumb
+  border-bottom: 1px solid rgba(255,255,255,0.3)
+  .breadcrumb
+    width: 1200px
+    margin: 0 auto
+    display: flex
+    font-size: 16px
+    line-height: 30px
+    color: rgba(255,255,255,0.8)
+    padding: 20px
 
-  img
-    vertical-align: middle
-    position: relative
-    top: -3px
-    margin: 0 3px 0 0
+    img
+      vertical-align: middle
+      position: relative
+      top: -2px
+      margin: 0 3px 0 0
 
-  .active
-    color: #1fb7b1
-    cursor: pointer
+    .active
+      cursor: pointer
 
-  .point
-    margin: 0 10px
-    line-height: 28px
-    font-weight: bold
-    color: #0dbdad
-    font-size: 30px
+    .point
+      margin: 0 15px
+      line-height: 28px
+      font-weight: bold
+      font-size: 30px
 
 .fl-right
   float: right
@@ -41,3 +45,23 @@ a
   float: left
 .fl-none
   float: none
+
+.btn-white
+  color: #0f8a9a
+  border: none
+  &:hover
+    color: #046673
+
+
+// 覆盖弹出框样式
+.el-message
+  min-width: 180px
+  background: #fff
+  border: 0
+  border-radius: 6px
+  box-shadow: 0 3px 5px rgba(00,00,00,0.1)
+  .el-message__content
+    color: #000
+.el-message--error
+.el-message__icon
+  font-size: 16px

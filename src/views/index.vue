@@ -1,9 +1,7 @@
 <template>
-  <div class="container">
-    <appSlider :list.sync="allApps">
-    </appSlider>
-    <myApps :list="myApps">
-    </myApps>
+  <div>
+    <appSlider :list.sync="allApps"></appSlider>
+    <myApps :list="myApps"></myApps>
   </div>
 </template>
 
@@ -57,6 +55,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.container
-  padding: 10px 20px 119px
+// .m-container-main
+
+//   .m-index
+//     max-width: 1200px
+//     margin: 0 auto
+//     padding: 10px 20px 119px
 </style>

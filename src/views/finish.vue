@@ -1,71 +1,75 @@
 <template>
-  <div class="finish">
-    <div class="breadcrumb">
-      <span @click="back" class="active">
-        <img src="../../static/images/btn-back.png" width="28" height="28">
-        返回首页
-      </span>
-      <i class="point">·</i>
-      <span>
-        新浪微博植入
-      </span>
+  <div>
+    <div class="m-container-breadcrumb">
+      <div class="breadcrumb">
+        <span @click="back" class="active">
+          <img src="../assets/images/btn-back.png" width="28" height="28">
+          返回首页
+        </span>
+        <i class="point">·</i>
+        <span>
+          新浪微博植入
+        </span>
+      </div>
     </div>
 
-    <!-- 已登录 -->
-    <div v-if="logined">
-      <div class="alert-msg" v-show="showAlert">
-        <span>打开小惠APP，进入聊天列表找到联系人 “新浪微博” 点击进行使用！<i class="btn-close" @click="showAlert = false">✕</i></span>
-      </div>
+    <div class="m-container-finish">
+      <!-- 已登录 -->
+      <div v-if="logined">
+        <div class="alert-msg" v-show="showAlert">
+          <span>打开小惠APP，进入聊天列表找到联系人 “新浪微博” 点击进行使用！<i class="btn-close" @click="showAlert = false">✕</i></span>
+        </div>
 
-      <div class="text-wrap app-status">
-        <h4>应用状态</h4>
-        <div class="">
-          <ul>
-            <li>• 已登录支付宝（{{accountName}}）
-              <span @click="showModel_1">Chatlet功能</span>
-            </li>
-            <li>• 已绑定【企业用户】{{xiaohuiName}}
-              <a @click="showModel_2">去解绑</a>
-            </li>
-            <li>• 小惠在线</li>
-            <li>• 已连接服务器（当前云桌面名称：支付宝硬植入Agent001）</li>
-          </ul>
+        <div class="text-wrap app-status">
+          <h4>应用状态</h4>
+          <div class="">
+            <ul>
+              <li>• 已登录支付宝（{{accountName}}）
+                <span @click="showModel_1">Chatlet功能</span>
+              </li>
+              <li>• 已绑定【企业用户】{{xiaohuiName}}
+                <a @click="showModel_2">去解绑</a>
+              </li>
+              <li>• 小惠在线</li>
+              <li>• 已连接服务器（当前云桌面名称：支付宝硬植入Agent001）</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-wrap app-log">
+          <h4>应用日志
+            <a href="/" class="fl-right">查看更多 >></a>
+          </h4>
+          <div class="">
+
+            <!-- 测试环境用: -->
+            <ul>
+              <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
+              <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
+              <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
+              <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
+              <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
+            </ul>
+
+            <!-- 正式环境用: -->
+            <!-- <ul>
+              <li v-for="item in logList">
+                {{item}}
+              </li>
+            </ul> -->
+
+          </div>
         </div>
       </div>
 
-      <div class="text-wrap app-log">
-        <h4>应用日志
-          <a href="/" class="fl-right">查看更多 >></a>
-        </h4>
-        <div class="">
-
-          <!-- 测试环境用: -->
-          <ul>
-            <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
-            <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
-            <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
-            <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
-            <li>2018/12/24 14:02:50 成功发送支付宝账单。</li>
-          </ul>
-
-          <!-- 正式环境用: -->
-          <!-- <ul>
-            <li v-for="item in logList">
-              {{item}}
-            </li>
-          </ul> -->
-
+      <!-- 未登录 -->
+      <div v-else>
+        <div class="alert-msg">
+          未登录 <router-link to="/index">重新登录</router-link>
         </div>
       </div>
-    </div>
 
-    <!-- 未登录 -->
-    <div v-else>
-      <div class="alert-msg">
-        未登录 <router-link to="/index">重新登录</router-link>
-      </div>
     </div>
-
   </div>
 </template>
 
@@ -163,25 +167,27 @@ export default {
 </script>
 
 <style lang="sass" scope>
-.finish
-  padding: 10px 20px
+.m-container-finish
+  > div
+    width: 1200px
+    margin: 0 auto
 
   .alert-msg
     font-size: 14px
     text-align: center
-    margin: 0 0 15px 0
+    margin: 20px 0 50px 0
 
     span
       display: inline-block
       background: #f1fffb
       border: 1px solid #bdf1e5
-      padding: 10px 150px 10px 20px
+      padding: 13px 150px 13px 20px
       border-radius: 6px
-      color: #308030
+      color: #000
       position: relative
 
       .btn-close
-        color: #308030
+        color: red
         font-weight: bold
         font-style: normal
         position: absolute
@@ -189,30 +195,31 @@ export default {
         cursor: pointer
 
   h4
-    font-size: 16px
+    font-size: 18px
     margin: 0
     font-weight: normal
-    padding: 10px 20px
+    padding: 13px 25px
+    background: #ffffff63
     a
-      font-size: 12px
+      font-size: 16px
   
 
 
   .text-wrap
-    background: #fff
+    background: #ffffff9e
     border-radius: 6px
     margin: 0 0 40px 0
-    line-height: 26px
-    padding: 0 0 10px 0
-    font-size: 12px
+    font-size: 14px
+    ul
+      padding: 10px 25px
+      line-height: 3
 
   .app-status
-    background: #fff
+    background: #ffffff9e
     border-radius: 6px
 
     ul
       margin: 0
-      padding: 0 20px
       li
         color: #124631
 
@@ -221,8 +228,7 @@ export default {
       margin: 0
       padding: 0 20px
       li
-        border-bottom: 1px solid #ccc
-        line-height: 36px
+        border-bottom: 1px dotted #868686
         color: #124631
 
 </style>

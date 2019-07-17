@@ -2,7 +2,7 @@ export const allApps = [
   {
     id: 1,
     icon: 'weibo.png',
-    name: 'weibo',
+    name: '新浪微博',
     width: '84',
     height: '68',
   }, {
@@ -14,7 +14,7 @@ export const allApps = [
   }, {
     id: 3,
     icon: 'weixin.png',
-    name: 'weixin',
+    name: '微信',
     width: '84',
     height: '68',
   }, {
