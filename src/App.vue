@@ -14,6 +14,10 @@ export default {
   name: 'app',
   components: {
     MHeader
+  },
+  mounted() {
+  },
+  methods: {
   }
 }
 </script>

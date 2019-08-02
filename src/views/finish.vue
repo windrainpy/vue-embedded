@@ -17,7 +17,7 @@
       <!-- 已登录 -->
       <div v-if="logined">
         <div class="alert-msg" v-show="showAlert">
-          <span>打开小惠APP，进入聊天列表找到联系人 “新浪微博” 点击进行使用！<i class="btn-close" @click="showAlert = false">✕</i></span>
+          <span>打开小慧APP，进入聊天列表找到联系人 “新浪微博” 点击进行使用！<i class="btn-close" @click="showAlert = false">✕</i></span>
         </div>
 
         <div class="text-wrap app-status">
@@ -25,12 +25,12 @@
           <div class="">
             <ul>
               <li>• 已登录支付宝（{{accountName}}）
-                <span @click="showModel_1">Chatlet功能</span>
+                <a @click="showModel_1">Chatlet功能</a>
               </li>
               <li>• 已绑定【企业用户】{{xiaohuiName}}
                 <a @click="showModel_2">去解绑</a>
               </li>
-              <li>• 小惠在线</li>
+              <li>• 小慧在线</li>
               <li>• 已连接服务器（当前云桌面名称：支付宝硬植入Agent001）</li>
             </ul>
           </div>
@@ -175,7 +175,7 @@ export default {
   .alert-msg
     font-size: 14px
     text-align: center
-    margin: 20px 0 50px 0
+    margin: 20px 0 0 0
 
     span
       display: inline-block
@@ -208,7 +208,6 @@ export default {
   .text-wrap
     background: #ffffff9e
     border-radius: 6px
-    margin: 0 0 40px 0
     font-size: 14px
     ul
       padding: 10px 25px
@@ -217,6 +216,8 @@ export default {
   .app-status
     background: #ffffff9e
     border-radius: 6px
+    margin-top: 50px
+    margin-bottom: 40px
 
     ul
       margin: 0

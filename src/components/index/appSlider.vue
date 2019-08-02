@@ -14,7 +14,7 @@
                 {{item.name}}
               </span>
             </div>
-            <div @click="addApp(item.name)" class="add-icon"></div></li>
+            <div @click="addApp(item.type)" class="add-icon"></div></li>
         </ul>
       </div>
     </div>
@@ -36,11 +36,11 @@ export default {
     
   },
   methods: {
-    addApp(appName) {
+    addApp(appType) {
       this.$router.push({
         path: '/embedded',
         query: {
-          appName: appName
+          appType: appType
         }
       })
     }

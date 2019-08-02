@@ -3,7 +3,7 @@
     <div class="my-apps">
       <h4>植入应用列表</h4>
       <ul class="app-list">
-        <li v-for="item in list" :key="item.id">
+        <li @click="toFinish" v-for="item in list" :key="item.id">
           <img :src="require('../../assets/images/' + item.icon)"
               :alt="item.email" :width="item.width" :height="item.height">
           <span class="name">
@@ -27,7 +27,13 @@ export default {
     }
   },
   mounted() {
-    
+  },
+  methods: {
+    toFinish() {
+      this.$router.push({
+        path: '/finish'
+      })
+    }
   }
 }
 </script>
